@@ -1,8 +1,8 @@
 name: countdown
-description: A new flutter plugin project.
+description: A simple countdown plugin for flutter.
 version: 0.0.1
-author:
-homepage:
+author: Leonardo Cardoso <leocardosoti@gmail.com>
+homepage: https://github.com/Leocardoso94/flutter-countdown
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
@@ -27,7 +27,6 @@ flutter:
   plugin:
     androidPackage: com.example.countdown
     pluginClass: CountdownPlugin
-
   # To add assets to your plugin package, add an assets section, like this:
   # assets:
   #  - images/a_dot_burr.jpeg
@@ -38,7 +37,6 @@ flutter:
   #
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
-
   # To add custom fonts to your plugin package, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a
