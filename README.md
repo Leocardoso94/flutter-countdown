@@ -17,7 +17,7 @@ samples, guidance on mobile development, and a full API reference.
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:countdown/countdown.dart';
+import 'package:countdown_flutter/countdown_flutter.dart';
 
 class MyApp extends StatefulWidget {
   @override

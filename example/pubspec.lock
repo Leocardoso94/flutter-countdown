@@ -29,7 +29,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.14.11"
-  countdown:
+  countdown_flutter:
     dependency: "direct dev"
     description:
       path: ".."
