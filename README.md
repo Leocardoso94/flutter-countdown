@@ -2,6 +2,8 @@
 
 A simple countdown plugin for flutter
 
+![gif](https://github.com/Leocardoso94/flutter-countdown/blob/master/images/countdown.gif?raw=true)
+
 ## Getting Started
 
 This project is a starting point for a Flutter
