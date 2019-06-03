@@ -1,6 +1,6 @@
-# countdown
+# flutter-countdown
 
-A simple countdown plugin for flutter
+A simple countdown plugin for flutter ⌛
 
 ![gif](https://github.com/Leocardoso94/flutter-countdown/blob/master/images/countdown.gif?raw=true)
 
