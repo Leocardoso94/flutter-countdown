@@ -1,3 +1,7 @@
+## 0.1.0
+
+- Improve description
+
 ## 0.0.3
 
 - Add CountdownFormatted
