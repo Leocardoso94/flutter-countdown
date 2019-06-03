@@ -15,41 +15,46 @@ samples, guidance on mobile development, and a full API reference.
 
 ### Usage
 
+#### Countdown
+
 ```dart
 import 'package:flutter/material.dart';
 import 'package:countdown_flutter/countdown_flutter.dart';
 
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  var _done = false;
-
+class Foo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text(_done ? 'Finished!' : 'Counting...'),
-        ),
-        body: Center(
-          child: Countdown(
-            duration: Duration(seconds: 10),
-            onFinish: () {
-              setState(() {
-                _done = true;
-              });
-            },
-            builder: (BuildContext ctx, Duration remaining) => Text(
-                  '${remaining.inMinutes}:${remaining.inSeconds}',
-                  style: TextStyle(
-                    fontSize: 30,
-                  ),
-                ),
-          ),
-        ),
+    return Center(
+      child: Countdown(
+        duration: Duration(seconds: 10),
+        onFinish: () {
+          print('finished!');
+        },
+        builder: (BuildContext ctx, Duration remaining) {
+            return Text('${remaining.inMinutes}:${remaining.inSeconds}');
+        },
+      ),
+    );
+  }
+}
+
+```
+
+#### CountdownFormatted
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:countdown_flutter/countdown_flutter.dart';
+
+class Foo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: CountdownFormatted(
+        duration: Duration(hours: 1),
+        builder: (BuildContext ctx, String remaining) {
+          return Text(remaining); // 01:00:00
+        },
       ),
     );
   }

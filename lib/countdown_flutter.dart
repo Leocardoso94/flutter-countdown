@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:countdown_flutter/utils.dart';
 import 'package:flutter/material.dart';
 
 class Countdown extends StatefulWidget {
@@ -54,5 +55,39 @@ class _CountdownState extends State<Countdown> {
   @override
   Widget build(BuildContext context) {
     return widget.builder(context, _duration);
+  }
+}
+
+class CountdownFormatted extends StatelessWidget {
+  const CountdownFormatted({
+    Key key,
+    @required this.duration,
+    @required this.builder,
+    this.onFinish,
+    this.interval = const Duration(seconds: 1),
+  }) : super(key: key);
+
+  final Duration duration;
+  final Duration interval;
+  final void Function() onFinish;
+  final Widget Function(BuildContext context, String remaining) builder;
+
+  Function(Duration) _formatter() {
+    if (duration.inHours >= 1) return formatByHours;
+    if (duration.inMinutes >= 1) return formatByMinutes;
+
+    return formatBySeconds;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Countdown(
+      interval: interval,
+      onFinish: onFinish,
+      duration: duration,
+      builder: (BuildContext ctx, Duration remaining) {
+        return builder(ctx, _formatter()(remaining));
+      },
+    );
   }
 }

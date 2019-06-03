@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:countdown_flutter/countdown_flutter.dart';
 
@@ -18,25 +19,26 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: Text(_done ? 'Finished!' : 'Counting...'),
         ),
-        body: Center(
-          child: Countdown(
-            duration: Duration(seconds: 10),
-            onFinish: () {
-              setState(() {
-                _done = true;
-              });
-            },
-            builder: (BuildContext ctx, Duration remaining) => Text(
-                  '${remaining.inMinutes}:${remaining.inSeconds}',
-                  style: TextStyle(
-                    fontSize: 30,
-                  ),
-                ),
-          ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+            Center(
+              child: CountdownFormatted(
+                duration: Duration(hours: 2),
+                builder: (BuildContext ctx, String remaining) {
+                  return Text(
+                    remaining,
+                    style: TextStyle(fontSize: 30),
+                  ); // 01:00:00
+                },
+              ),
+            ),
+          ],
         ),
       ),
     );

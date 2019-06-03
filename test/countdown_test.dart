@@ -96,4 +96,55 @@ void main() {
     await tester.pump(Duration(seconds: 1));
     expect(done, true);
   });
+
+  testWidgets('CountdownFormatted seconds', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        home: CountdownFormatted(
+          duration: Duration(seconds: 4),
+          builder: (_, remaining) => Text(remaining),
+        ),
+      ),
+    );
+
+    expect(find.text('04'), findsOneWidget);
+
+    await tester.pump(Duration(seconds: 5));
+
+    expect(find.text('00'), findsOneWidget);
+  });
+
+  testWidgets('CountdownFormatted minutes', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        home: CountdownFormatted(
+          duration: Duration(minutes: 4, seconds: 30),
+          builder: (_, remaining) => Text(remaining),
+        ),
+      ),
+    );
+
+    expect(find.text('04:30'), findsOneWidget);
+
+    await tester.pump(Duration(minutes: 5));
+
+    expect(find.text('00:00'), findsOneWidget);
+  });
+
+  testWidgets('CountdownFormatted hours', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        home: CountdownFormatted(
+          duration: Duration(minutes: 4, seconds: 30, hours: 20),
+          builder: (_, remaining) => Text(remaining),
+        ),
+      ),
+    );
+
+    expect(find.text('20:04:30'), findsOneWidget);
+
+    await tester.pump(Duration(hours: 21));
+
+    expect(find.text('00:00:00'), findsOneWidget);
+  });
 }
