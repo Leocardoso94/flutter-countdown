@@ -1,11 +1,11 @@
-#import "CountdownPlugin.h"
+#import "CountdownFlutterPlugin.h"
 
-@implementation CountdownPlugin
+@implementation CountdownFlutterPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
   FlutterMethodChannel* channel = [FlutterMethodChannel
-      methodChannelWithName:@"countdown"
+      methodChannelWithName:@"countdown_flutter"
             binaryMessenger:[registrar messenger]];
-  CountdownPlugin* instance = [[CountdownPlugin alloc] init];
+  CountdownFlutterPlugin* instance = [[CountdownFlutterPlugin alloc] init];
   [registrar addMethodCallDelegate:instance channel:channel];
 }
 

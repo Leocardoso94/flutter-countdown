@@ -1,5 +1,9 @@
 ## 0.1.0
 
+- bug fix ios
+
+## 0.1.0
+
 - Improve description
 
 ## 0.0.3
