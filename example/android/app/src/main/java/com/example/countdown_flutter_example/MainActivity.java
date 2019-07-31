@@ -1,4 +1,4 @@
-package com.example.countdown_example;
+package com.example.countdown_flutter_example;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

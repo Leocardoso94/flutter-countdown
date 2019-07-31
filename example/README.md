@@ -1,6 +1,6 @@
-# countdown_example
+# countdown_flutter_example
 
-Demonstrates how to use the countdown plugin.
+Demonstrates how to use the countdown_flutter plugin.
 
 ## Getting Started
 

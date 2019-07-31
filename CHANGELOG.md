@@ -1,3 +1,7 @@
+## 0.1.1
+
+- bug fix ios
+
 ## 0.1.0
 
 - Improve description
