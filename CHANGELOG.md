@@ -1,3 +1,7 @@
+## 0.1.2
+
+- add option to format duration
+
 ## 0.1.1
 
 - bug fix ios

@@ -65,14 +65,20 @@ class CountdownFormatted extends StatelessWidget {
     @required this.builder,
     this.onFinish,
     this.interval = const Duration(seconds: 1),
+    this.formatter,
   }) : super(key: key);
 
   final Duration duration;
   final Duration interval;
   final void Function() onFinish;
+
+  /// An function to format the remaining time
+  final String Function(Duration) formatter;
+
   final Widget Function(BuildContext context, String remaining) builder;
 
   Function(Duration) _formatter() {
+    if (formatter != null) return formatter;
     if (duration.inHours >= 1) return formatByHours;
     if (duration.inMinutes >= 1) return formatByMinutes;
 

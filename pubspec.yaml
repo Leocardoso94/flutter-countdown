@@ -1,7 +1,6 @@
 name: countdown_flutter
 description: A simple countdown plugin for flutter. Provides a simple way to create a countdown in your app.
-version: 0.1.1
-author: Leonardo Cardoso <leocardosoti@gmail.com>
+version: 0.1.2
 homepage: https://github.com/Leocardoso94/flutter-countdown
 
 environment:

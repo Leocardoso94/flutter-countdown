@@ -5,3 +5,5 @@
 .pub/
 
 build/
+flutter_export_environment.sh
+.flutter-plugins-dependencies
